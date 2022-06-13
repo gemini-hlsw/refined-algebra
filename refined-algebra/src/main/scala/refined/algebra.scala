@@ -23,21 +23,16 @@ package object algebra {
       }
 
       def times(x: PosInt, y: PosInt) =
-        refineV[Positive](x.value * y.value).fold(
-          _ => moduloMaxValue(x.value.toLong * y.value.toLong),
-          identity(_)
-        )
+        (x.value.toLong * y.value.toLong) % Int.MaxValue match {
+          case 0 => PosInt.MaxValue
+          case z => refineV[Positive].unsafeFrom(z.toInt)
+        }
 
       def negate(x: PosInt) = x match {
         case PosInt.MaxValue => PosInt.MaxValue
         case _               => refineV[Positive].unsafeFrom(Int.MaxValue - x.value)
       }
 
-      private def moduloMaxValue(x: Long) =
-        x % Int.MaxValue match {
-          case 0 => PosInt.MaxValue
-          case x => refineV[Positive](x.toInt).toOption.get
-        }
     }
 
 }

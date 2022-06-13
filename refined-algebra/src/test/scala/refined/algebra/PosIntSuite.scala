@@ -16,11 +16,10 @@ class PosIntSuite extends DisciplineSuite {
 
   checkAll("PosInt", RingLaws[PosInt].multiplicativeSemigroup)
 
-  test("multiplicative associativity") {
-    val x = refineV[Positive](90973857).toOption.get
-    val y = refineV[Positive](1171327613).toOption.get
-    val z = refineV[Positive](926367060).toOption.get
-    assertEquals(Ring.times(Ring.times(x, y), z), Ring.times(x, Ring.times(y, z)))
+  test("90973857 * 1913662923 = 1886515335") {
+    val x = refineV[Positive].unsafeFrom(90973857)
+    val y = refineV[Positive].unsafeFrom(1913662923)
+    assertEquals(Ring.times(x, y), refineV[Positive].unsafeFrom(1886515335))
   }
 
 }
