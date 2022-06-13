@@ -8,7 +8,7 @@ import eu.timepit.refined.numeric.Positive
 import eu.timepit.refined.refineV
 import eu.timepit.refined.types.numeric.PosInt
 
-object algebra {
+package object algebra {
 
   implicit def posIntAlgebra: CommutativeRing[PosInt] =
     new CommutativeRing[PosInt] {

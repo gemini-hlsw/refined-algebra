@@ -13,9 +13,11 @@ lazy val refinedAlgebra = crossProject(JVMPlatform, JSPlatform)
   .settings(
     name := "refined-algebra",
     libraryDependencies ++= Seq(
-      "org.typelevel" %%% "algebra"          % algebraVersion,
-      "eu.timepit"    %%% "refined"          % refinedVersion,
-      "org.typelevel" %%% "algebra-laws"     % algebraVersion % Test,
-      "org.typelevel" %%% "discipline-munit" % "2.0.0-M2"     % Test
+      "org.typelevel" %%% "algebra"            % algebraVersion,
+      "eu.timepit"    %%% "refined"            % refinedVersion,
+      "org.typelevel" %%% "algebra-laws"       % algebraVersion % Test,
+      "eu.timepit"    %%% "refined-cats"       % refinedVersion % Test,
+      "eu.timepit"    %%% "refined-scalacheck" % refinedVersion % Test,
+      "org.typelevel" %%% "discipline-munit"   % "2.0.0-M2"     % Test
     )
   )
