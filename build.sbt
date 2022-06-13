@@ -4,6 +4,8 @@ val scala213 = "2.13.8"
 ThisBuild / crossScalaVersions := List(scala213, "3.1.2")
 ThisBuild / scalaVersion       := scala213
 
+ThisBuild / tlCiReleaseBranches := Seq("main")
+
 val algebraVersion = "2.7.0"
 val refinedVersion = "0.9.29"
 
