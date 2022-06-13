@@ -7,6 +7,8 @@ ThisBuild / scalaVersion       := scala213
 val algebraVersion = "2.7.0"
 val refinedVersion = "0.9.29"
 
+lazy val root = tlCrossRootProject.aggregate(refinedAlgebra)
+
 lazy val refinedAlgebra = crossProject(JVMPlatform, JSPlatform)
   .crossType(CrossType.Pure)
   .in(file("refined-algebra"))
