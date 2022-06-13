@@ -17,11 +17,10 @@ package object algebra {
 
       def one = PosInt.MinValue
 
-      def plus(x: PosInt, y: PosInt) =
-        refineV[Positive](x.value + y.value).fold(
-          _ => moduloMaxValue(x.value.toLong + y.value.toLong),
-          identity(_)
-        )
+      def plus(x: PosInt, y: PosInt) = {
+        val z = Integer.remainderUnsigned(x.value + y.value, Int.MaxValue)
+        if (z == 0) PosInt.MaxValue else refineV[Positive].unsafeFrom(z)
+      }
 
       def times(x: PosInt, y: PosInt) =
         refineV[Positive](x.value * y.value).fold(
