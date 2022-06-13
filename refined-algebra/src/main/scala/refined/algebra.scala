@@ -30,7 +30,7 @@ package object algebra {
 
       def negate(x: PosInt) = x match {
         case PosInt.MaxValue => PosInt.MaxValue
-        case _               => refineV[Positive](Int.MaxValue - x.value).toOption.get
+        case _               => refineV[Positive].unsafeFrom(Int.MaxValue - x.value)
       }
 
       private def moduloMaxValue(x: Long) =
