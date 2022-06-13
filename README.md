@@ -1,2 +1,2 @@
 # refined-algebra
-Algebra typeclasses for refined numerics
+Algebra instances for refined numerics
