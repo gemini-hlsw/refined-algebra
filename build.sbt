@@ -7,7 +7,7 @@ ThisBuild / scalaVersion       := scala213
 ThisBuild / tlCiReleaseBranches := Seq("main")
 
 val algebraVersion = "2.9.0"
-val refinedVersion = "0.10.1"
+val refinedVersion = "0.10.2"
 
 lazy val root = tlCrossRootProject.aggregate(refinedAlgebra)
 
