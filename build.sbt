@@ -1,6 +1,6 @@
 ThisBuild / tlBaseVersion := "0.1"
 
-val scala213 = "2.13.10"
+val scala213 = "2.13.11"
 ThisBuild / crossScalaVersions := List(scala213, "3.2.2")
 ThisBuild / scalaVersion       := scala213
 
