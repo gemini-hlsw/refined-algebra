@@ -22,6 +22,6 @@ lazy val refinedAlgebra = crossProject(JVMPlatform, JSPlatform)
       "org.typelevel" %%% "algebra-laws"       % algebraVersion % Test,
       "eu.timepit"    %%% "refined-cats"       % refinedVersion % Test,
       "eu.timepit"    %%% "refined-scalacheck" % refinedVersion % Test,
-      "org.typelevel" %%% "discipline-munit"   % "2.0.0-M3"     % Test
+      "org.typelevel" %%% "discipline-munit"   % "2.0.0-M4"     % Test
     )
   )
